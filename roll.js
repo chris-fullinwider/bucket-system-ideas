@@ -8,7 +8,7 @@ const md5 = require('md5')
 const roll = (bucketKey) => {
     console.log("BUCKET KEY: ", bucketKey)
     var mhash = md5(bucketKey);
-    // convert hash into base 16 number
+    // convert hash into base 16 number (since the hash is a hex value)
     // divide by the hash size of md5 (2^128) to get a number between 0 and 1
     return parseInt(mhash, 16) / Math.pow(2,128);
 };
